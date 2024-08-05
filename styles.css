@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f0f0f0;
+    padding-top: 2vh;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 880px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 11px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin-bottom: 22px;
+    font-size: clamp(19.8px, 3vw, 26.4px);
+    font-weight: 700;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: -5px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.game-board img {
+    width: 100%;
+    max-width: 275px;
+    height: auto;
+    cursor: pointer;
+    object-fit: contain;
+    border-radius: 10px;
+    margin: 5px 5px 5px 5px; /* Lisätty takaisin kuvien marginaalit */
+}
+
+.stop-button {
+    width: 150px;
+    height: 150px;
+    margin: 5px auto 0;
+    cursor: pointer;
+    display: block;
+    border-radius: 10px;
+}
+
+@media (max-width: 880px) {
+    .container {
+        max-width: 95%;
+    }
+    
+    .game-board img {
+        max-width: calc(100% - 10px);
+    }
+}
+
+@media (max-width: 660px) {
+    .game-board {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .stop-button {
+        width: 130px;
+        height: 130px;
+    }
+}
